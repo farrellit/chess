@@ -1,4 +1,6 @@
 
+#include <stdlib.h>
+
 typedef char piece;
 typedef char position;
 typedef char* position_set;
