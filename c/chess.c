@@ -65,7 +65,7 @@ piece piece_at( const board* b, position p ){
     return ( 
       *(b->squares) >>  
         ( ( fileof( p ) * 4 ) + 
-          ( fileof( p ) * 8 )  )  
+          ( rankof( p ) * 8 )  )  
         ) & 0X0F;
 }
 
