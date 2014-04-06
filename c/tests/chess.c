@@ -17,7 +17,7 @@ int main(){
     };
     for( int i = 0; i < sizeof( strings ) + 1; i++ ){
         if( 0 != strncmp( strings[i], showpos( pos, positions[i]) , 2) ){
-            sprintf("\033[41mError!\033[0m 0x%02x should have equaled %s", 
+            printf("\033[41mError!\033[0m 0x%02x should have equaled %s", 
                 positions+i,
                 strings[i]
             );
