@@ -26,6 +26,34 @@ char rankof( position p ){
 #define WHITE_CASTLABLE  0x01
 #define BLACK_CASTLABLE  0x02
 
+#define EMPTY_BOARD 0x00000000000000000000000000000000;
+
+char[] gamestart_board() {
+    return { 
+    (( WHITE & ROOK   ) << 4 ) & ( WHITE & KNIGHT ), 
+    (( WHITE & BISHOP ) << 4 ) & ( WHITE & QUEEN  ), 
+    (( WHITE & KING   ) << 4 ) & ( WHITE & BISHOP ), 
+    (( WHITE & KNIGHT ) << 4 ) & ( WHITE & ROOK   ), 
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    0x00, 0x00, 0x00, 0x00, // empty row
+    0x00, 0x00, 0x00, 0x00, // empty row
+    0x00, 0x00, 0x00, 0x00, // empty row
+    0x00, 0x00, 0x00, 0x00, // empty row
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & PAWN   ) << 4 ) & ( WHITE & PAWN   ),
+    (( WHITE & ROOK   ) << 4 ) & ( WHITE & KNIGHT ), 
+    (( WHITE & BISHOP ) << 4 ) & ( WHITE & QUEEN  ), 
+    (( WHITE & KING   ) << 4 ) & ( WHITE & BISHOP ), 
+    (( WHITE & KNIGHT ) << 4 ) & ( WHITE & ROOK   ) 
+    }
+}
+
+
 typedef char boardmeta;
 
 typedef struct {    
